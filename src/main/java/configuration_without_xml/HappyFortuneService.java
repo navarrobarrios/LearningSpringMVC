@@ -1,4 +1,4 @@
-package configuration_with_annotations;
+package configuration_without_xml;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

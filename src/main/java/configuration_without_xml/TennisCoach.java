@@ -1,9 +1,7 @@
-package configuration_with_annotations;
+package configuration_without_xml;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -11,7 +9,7 @@ import javax.annotation.PreDestroy;
 
 @Component
 //@Scope("prototype")
-public class TennisCoach implements Coach{
+public class TennisCoach implements Coach {
     //region Varibles
     @Autowired
     @Qualifier("happyFortuneService")
@@ -20,6 +18,10 @@ public class TennisCoach implements Coach{
 
     //region Constructor
     public TennisCoach() {
+    }
+
+    public TennisCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
     }
 
     //endregion
